@@ -21,7 +21,7 @@ namespace ChatbotAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
+        [HttpPost]
         public IActionResult GetSpeechToText([FromBody] GetModel getModel)
         {
             var bytes = getModel.Bytes;
