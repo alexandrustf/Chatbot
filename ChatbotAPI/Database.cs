@@ -46,7 +46,6 @@ namespace ChatbotAPI
                 string json = r.ReadToEnd();
                 item = JsonConvert.DeserializeObject<ResponseModel>(json);
             }
-
             return item;
         }
 

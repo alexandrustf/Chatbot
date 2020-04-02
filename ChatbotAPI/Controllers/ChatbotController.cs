@@ -25,9 +25,11 @@ namespace ChatbotAPI.Controllers
         public IActionResult GetSpeechToText([FromBody] GetModel getModel)
         {
             var bytes = getModel.Bytes;
-            var command = new SpeechToTextConverter().ConvertSpeechToText(bytes);
+            var converter = new SpeechConverter();
+            var command = converter.ConvertSpeechToText(bytes);
             // var command = " can you close the fridge please?";
             var result = CommandHandler.GetCommand(command).Execute();
+            result.BytesResponse = converter.ConvertTextToSpeech(command);
             return Ok(result);
         }
 

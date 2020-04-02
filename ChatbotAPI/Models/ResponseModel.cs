@@ -12,12 +12,16 @@ namespace ChatbotAPI
         public bool tvOpen { get; set; }
         public bool doorOpen { get; set; }
 
-        public ResponseModel(bool lightsOpen, bool fridgeOpen, bool tvOpen, bool doorOpen)
+        public byte[] BytesResponse { get; set; }
+
+        public ResponseModel(bool lightsOpen, bool fridgeOpen, bool tvOpen, bool doorOpen, byte[] bytesResponse)
         {
             this.lightsOpen = lightsOpen;
             this.fridgeOpen = fridgeOpen;
             this.tvOpen = tvOpen;
             this.doorOpen = doorOpen;
+            BytesResponse = bytesResponse;
         }
+
     }
 }
