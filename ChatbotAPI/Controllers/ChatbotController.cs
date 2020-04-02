@@ -26,7 +26,7 @@ namespace ChatbotAPI.Controllers
         {
             var bytes = getModel.Bytes;
             var command = new SpeechToTextConverter().ConvertSpeechToText(bytes);
-            // var command = " can you open the fridge please?";
+            // var command = " can you close the fridge please?";
             var result = CommandHandler.GetCommand(command).Execute();
             return Ok(result);
         }

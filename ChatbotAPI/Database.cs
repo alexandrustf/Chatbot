@@ -15,15 +15,14 @@ namespace ChatbotAPI
     public  class Database
     {
         const string bucketName = "picturecommandsbucket";
-        const string path = "C:\\Users\\Alex Stefan\\source\\repos\\Chatbot\\ChatbotAPI";
-        const string downloadPath = "C:\\Users\\Alex Stefan\\source\\repos\\Chatbot\\ChatbotAPI\\downloaded.json";
+        const string downloadPath = "downloaded.json";
         const string objectName = "MyUtilities";
 
 
         internal void Update(ResponseModel response)
         {
             string jsonString = JsonConvert.SerializeObject(response);
-            var uploadPath = path + "\\Upload\\" + Guid.NewGuid();
+            var uploadPath = ".\\Upload\\" + Guid.NewGuid();
             using (FileStream fs = File.OpenWrite(uploadPath))
             {
                 fs.Write(Encoding.ASCII.GetBytes(jsonString));
