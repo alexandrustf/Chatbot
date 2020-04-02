@@ -20,7 +20,7 @@ namespace ChatbotAPI
         const string objectName = "MyUtilities";
 
 
-        internal async void Update(ResponseModel response)
+        internal void Update(ResponseModel response)
         {
             string jsonString = JsonConvert.SerializeObject(response);
             var uploadPath = path + "\\Upload\\" + Guid.NewGuid();

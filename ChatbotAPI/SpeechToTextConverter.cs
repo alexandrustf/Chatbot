@@ -32,7 +32,7 @@ namespace SpeechToText
 
         public string ConvertSpeechToText(byte[] bytes)
         {
-            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "C:\\Users\\Alex Stefan\\source\\repos\\Chatbot\\SpeechToText\\Speech-206301277cf5.json");
+            System.Environment.SetEnvironmentVariable("GOOGLE_APPLICATION_CREDENTIALS", "C:\\Users\\Alex Stefan\\source\\repos\\Chatbot\\ChatbotAPI\\Speech-206301277cf5.json");
             var speech = SpeechClient.Create();
             var response = speech.Recognize(new RecognitionConfig()
             {
